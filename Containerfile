@@ -9,9 +9,9 @@ LABEL \
     org.opencontainers.image.vendor="Hubbitus" \
     org.opencontainers.image.licenses="MIT"
 
-RUN dnf install -y 3proxy && dnf clean all
+RUN dnf install -y 3proxy --setopt=install_weak_deps=False && dnf clean all
 
-ADD 3proxy.cfg.example /etc/3proxy.cfg
+ADD 3proxy.example.cfg /etc/3proxy.cfg
 
 RUN useradd 3proxy
 
