@@ -24,5 +24,4 @@ podman run -it --rm quay.io/hubbitus/3proxy cat /etc/3proxy.cfg > 3proxy.cfg
 podman run -it -v ./3proxy.cfg:/etc/3proxy.cfg -v ./_logs:/var/log/3proxy --name 3proxy -p 8080:8088 -p 8888:8888 quay.io/hubbitus/3proxy
 ```
 
-> **Note**! If you would like use other ports than default 8088 and 8888, most probably you will need run it in the host network mode (`--network host`).
-
+> **Note**! If you would like to use other ports then default 8088 and 8888, most probably you will need run it in the host network mode (`--network host`).
