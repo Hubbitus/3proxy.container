@@ -1,0 +1,12 @@
+image: quay.io/podman/stable
+
+variables:
+  CONTAINER_REGISTRY_URL: 'artifactory.epam.com:6257/jupyterlab-ddo'
+
+before_script:
+  - podman login -u $CONTAINER_REGISTRY_USER -p $CONTAINER_REGISTRY_PASS $CONTAINER_REGISTRY_URL
+
+build-and-push:
+  stage: build
+  script:
+    - ./build.sh push
